@@ -109,6 +109,9 @@ def process_files(event_title, file_tuple_list):
         print('', file=f)
         print(etree.tostring(fcpxml, pretty_print=True).decode('UTF-8'), file=f)
 
+    global REF_INDEX
+    REF_INDEX = 0
+
 parser = argparse.ArgumentParser(description='Generate FCPXML from OBS Infowriter output')
 parser.add_argument('event_title')
 parser.add_argument('file_list', nargs='+', help='video file, log file ...')
